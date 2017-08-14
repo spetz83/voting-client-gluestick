@@ -2,7 +2,14 @@
 
 import React, { Component } from "react";
 
+type Props = {
+  pair: string,
+  hasVoted: boolean,
+  vote: string
+};
+
 export default class Vote extends Component {
+  props: Props;
   constructor(props) {
     super(props);
     this.shouldComponentUpdate = React.addons.PureRenderMixin.shouldComponentUpdate.bind(this);

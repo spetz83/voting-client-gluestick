@@ -4,9 +4,14 @@ import React, { Component } from "react";
 import {connect} from "react-redux";
 import Winner from "./Winner";
 import Vote from "./Vote";
-import * as actionCreators from "../action_creators";
+import * as actionCreators from "../actions/action_creators";
+
+type Props = {
+  winner: string
+};
 
 export default class Voting extends Component {
+  props: Props;
   constructor(props) {
     super(props);
     this.shouldComponentUpdate = React.addons.PureRenderMixin.shouldComponentUpdate.bind(this);

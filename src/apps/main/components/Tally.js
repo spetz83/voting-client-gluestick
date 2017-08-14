@@ -2,11 +2,14 @@
 
 import React, { Component } from "react";
 
+type Props = {
+  tally: Array<any>,
+  pair: Array<string>
+};
+
 export default class Tally extends Component {
-  props: {
-    tally: Array<any>,
-    pair: Array<string>
-  };
+  props: Props;
+
   constructor(props) {
     super(props);
     this.shouldComponentUpdate = React.addons.PureRenderMixin.shouldComponentUpdate.bind(this);
