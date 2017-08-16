@@ -1,6 +1,7 @@
 /* @flow */
 
 import React, { Component } from "react";
+import PureRenderMixin from "react-addons-pure-render-mixin";
 
 type Props = {
   tally: Array<any>,
@@ -12,7 +13,7 @@ export default class Tally extends Component {
 
   constructor(props) {
     super(props);
-    this.shouldComponentUpdate = React.addons.PureRenderMixin.shouldComponentUpdate.bind(this);
+    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
   }
   getVotes(entry) {
     if(this.props.tally && this.props.tally.has(entry)) {

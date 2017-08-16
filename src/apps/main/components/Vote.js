@@ -1,6 +1,7 @@
 /* @flow */
 
 import React, { Component } from "react";
+import PureRenderMixin from "react-addons-pure-render-mixin";
 
 type Props = {
   pair: string,
@@ -12,7 +13,7 @@ export default class Vote extends Component {
   props: Props;
   constructor(props) {
     super(props);
-    this.shouldComponentUpdate = React.addons.PureRenderMixin.shouldComponentUpdate.bind(this);
+    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
   }
   getPair() {
     return this.props.pair || [];

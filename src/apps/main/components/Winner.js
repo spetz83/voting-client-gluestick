@@ -1,6 +1,7 @@
 /* @flow */
 
 import React, { Component } from "react";
+import PureRenderMixin from "react-addons-pure-render-mixin";
 
 type Props = {
   winner: string
@@ -10,7 +11,7 @@ export default class Winner extends Component {
   props: Props;
   constructor(props) {
     super(props);
-    this.shouldComponentUpdate = React.addons.PureRenderMixin.shouldComponentUpdate.bind(this);
+    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
   }
   render () {
     return (

@@ -1,6 +1,8 @@
 /* @flow */
 
 import React, { Component } from "react";
+import PureRenderMixin from "react-addons-pure-render-mixin";
+import { List } from "immutable";
 import {connect} from "react-redux";
 import Winner from "./Winner";
 import Tally from "./Tally";
@@ -15,7 +17,7 @@ export default class Results extends Component {
   props: Props;
   constructor(props) {
     super(props);
-    this.shouldComponentUpdate = React.addons.PureRenderMixin.shouldComponentUpdate.bind(this);
+    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
   }
   render () {
     return this.props.winner ?
@@ -33,7 +35,7 @@ export default class Results extends Component {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state: List) {
   return {
     pair: state.getIn(["vote", "pair"]),
     tally: state.getIn(["vote", "tally"]),
